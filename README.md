@@ -1,6 +1,16 @@
 # popt-redist
 a redistributable version of the popt argument parsing library 
 
+## Using
+Just pick it up and drop it into a subdirectory of your project. You should be able to generate `libpopt.a` doing the standard:
+
+```
+./configure
+make
+```
+
+`autogen.sh` is provided for convenience in case you need to re-generate the configure script. This should only be necessary if you're mucking about with autotools internals - e.g., modifying `configure.ac` or `Makefile.am`.
+
 ## Motivations
 [popt](https://github.com/rpm-software-management/popt) is an excellent argument parsing library - full-featured, battle-hardened (it's been around for decades now), etc. It is also widely-available at this point..._but_:
 
