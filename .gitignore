@@ -30,5 +30,4 @@ poptparse.o
 libpopt.a
 
 # distribution files
-popt-*/
 popt-*.tar.gz

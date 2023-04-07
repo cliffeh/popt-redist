@@ -1,4 +1,4 @@
-AC_INIT([popt-redist], [1.19], [cliff.snyder@gmail.com])
+AC_INIT([popt], [1.19], [cliff.snyder@gmail.com])
 AM_INIT_AUTOMAKE([-Wall -Werror foreign])
 
 AC_USE_SYSTEM_EXTENSIONS
