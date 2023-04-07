@@ -13,4 +13,4 @@ libpopt_a_SOURCES = \
 
 AM_CPPFLAGS = -DPOPT_SYSCONFDIR="\"$(sysconfdir)\""
 
-EXTRA_DIST  = popt.pdf README.popt
+EXTRA_DIST  = autogen.sh popt.pdf README.popt
