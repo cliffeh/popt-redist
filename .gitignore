@@ -18,13 +18,8 @@ Makefile.in
 missing
 stamp-h1
 
-# generated objects files
-lookup3.o
-popt.o
-poptconfig.o
-popthelp.o
-poptint.o
-poptparse.o
+# generated object files
+*.o
 
 # generated library
 libpopt.a
