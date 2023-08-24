@@ -2,17 +2,27 @@
 a redistributable version of the popt argument parsing library 
 
 ## Using
-Just pick it up and drop it into a subdirectory of your project. You should be able to generate `libpopt.a` doing the standard:
+Place the contents of this repo into a subdirectory of your project. (For the purposes of this doc, we'll assume this subdirectory is named `popt`.) If you are using autotools for your main project, you'll need to make the following modifications:
 
+* Add `AC_CONFIG_SUBDIRS([popt])` to your main project's configure.ac
+* Add `SUBDIRS = popt` to your main project's Makefile.am
+
+This should be sufficient - i.e., in your main project you should be able to do the standard:
 ```
 ./configure
 make
 ```
 
-`autogen.sh` is provided for convenience in case you need to re-generate the configure script. This should only be necessary if you're mucking about with autotools internals - e.g., modifying `configure.ac` or `Makefile.am`.
+...and then add `popt/libpopt.a` as a library dependency to whichever targets you like.
 
-## Caveats
-While this comes with the trappings of autotools - a `configure` script and so forth - they only seem to work "standalone". i.e., I have yet to figure out the "secret sauce" for getting it to actually build as a subdirectory/subproject of an autotools project.
+If you are *not* using autotools for your main project, `autogen.sh` is provided as a convenient way to generate a configure script and a Makefile that you can use. For example, within the `popt` subdirectory:
+```
+./autogen.sh
+./configure
+make
+```
+
+This will build `libpopt.a` as above, which you can then link however you see fit.
 
 ## Motivations
 [popt](https://github.com/rpm-software-management/popt) is an excellent argument parsing library - full-featured, battle-hardened (it's been around for decades now), etc. It is also widely-available at this point..._but_:
